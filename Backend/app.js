@@ -19,13 +19,23 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-// CORS
+// CORS - Acceso cruzado entre dominios , permite el acceso a la API desde cualquier frontend 
+
+// Configurar cabeceras y cors
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
+
+
+
 
 // Añadir prefijos a rutas / Cargar rutas
 
 app.use('/api', article_routes);
-
-// Ruta pruebas
 
 
 // Exportar modulo(fichero actual)
