@@ -9,6 +9,7 @@ import { BlogComponent } from "./components/blog/blog.component";
 import { FormularioComponent } from "./components/formulario/formulario.component";
 import { PaginaComponent } from "./components/pagina/pagina.component";
 import { ErrorComponent } from "./components/error/error.component";
+
 //Array de rutas
 
 const appRoutes : Routes = [
@@ -16,7 +17,8 @@ const appRoutes : Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'blog', component: BlogComponent},
     {path: 'formulario', component: FormularioComponent},
-    {path: 'pagina-de-pruebas', component: PaginaComponent},
+    {path: 'pagina-de-pruebas', component: PaginaComponent}, //Hacemos que el parametro sea opcional generando la misma ruta pero sin el parametro
+    {path: 'pagina-de-pruebas/:nombre/:apellidos', component: PaginaComponent},    
     {path: '**', component: ErrorComponent} // La ruta ** debe ir la última porque si no las otras no cargan
 
 ];
