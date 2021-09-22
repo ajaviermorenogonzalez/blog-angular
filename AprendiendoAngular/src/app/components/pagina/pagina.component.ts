@@ -30,4 +30,9 @@ export class PaginaComponent implements OnInit {
 
   }
 
+  redireccion(){
+    //this._router.navigate(['/formulario']); asi se redirigiria sin parametros
+    this._router.navigate(['/pagina-de-pruebas', 'Werner', 'Heisenberg' ]); // Podemos redirigir indicando los parametros que queramos
+  }
+
 }
