@@ -77,8 +77,9 @@ header {
     transition: 500ms all;
 }
 
-#menu a:hover {
-    color: #f13e3e;
+#menu a:hover,
+.active {
+    color: #f13e3e !important;
 }
 
 #slider {
